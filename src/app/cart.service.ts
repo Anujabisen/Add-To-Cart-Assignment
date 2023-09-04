@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
-
+productData = new Subject<any>()
   cartItems: any[] = [
   //   {
   //     "id": 8,
@@ -26,6 +27,13 @@ export class CartService {
   //     ]
   // }
   ];
+
+  setDataSubject(data: any) {
+    this.productData.next(data)
+  }
+  getDataSubject() {
+    return this.productData;
+  }
 
   addToCart(product: any): void {
     this.cartItems.push(product);

@@ -50,4 +50,10 @@ export class AllProductsComponent {
       this.cartItems.push({ ...product, quantity: 1 });
     }
   }
+  imageData(data:any){
+    console.log(data);
+    
+    this.cartService.setDataSubject(data) 
+
+  }
 }

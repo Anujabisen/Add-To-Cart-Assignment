@@ -2,7 +2,7 @@
     <ul>
       <li *ngFor="let product of products.slice(0, 24)">
         <div class="product-item">
-          <img [src]="product.thumbnail" alt="{{ product.title }}">
+          <img [src]="product.thumbnail" (click)="imageData(product)" alt="{{ product.title }}">
           <div class="product-details">
             <img [src]="product.thumbnail" alt="{{ product.title }}">
             <h2>{{ product.title }}</h2>
