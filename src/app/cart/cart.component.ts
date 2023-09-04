@@ -44,7 +44,7 @@ export class CartComponent {
   calculateCartSummary(): void {
 
     this.subtotal = this.cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
-    // Implement VAT tax, discount, and total calculations as needed
+  
   }
   updateItem(item: any): void {
     console.log(item);
